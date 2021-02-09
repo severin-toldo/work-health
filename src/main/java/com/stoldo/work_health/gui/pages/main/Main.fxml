@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="1102.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab text="Journal">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="bookingTextField" layoutX="179.0" layoutY="127.0" prefHeight="27.0" prefWidth="247.0" />
+                  <ComboBox fx:id="sollChartCb" layoutX="436.0" layoutY="126.0" prefWidth="150.0" />
+                  <ComboBox fx:id="habenChartCb" layoutX="610.0" layoutY="126.0" prefWidth="150.0" />
+                  <TextField fx:id="bookingAmountTextField" layoutX="789.0" layoutY="124.0" />
+                  <Text layoutX="27.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Journal">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="32.0" layoutY="105.0" text="Datum" />
+                  <Label layoutX="181.0" layoutY="106.0" text="Text" />
+                  <Label layoutX="438.0" layoutY="105.0" text="Soll Konto" />
+                  <Label layoutX="611.0" layoutY="105.0" text="Haben Konto" />
+                  <Label layoutX="790.0" layoutY="104.0" text="Betrag" />
+                  <TableView fx:id="bookingTable" layoutX="32.0" layoutY="223.0" prefHeight="422.0" prefWidth="1037.0">
+                    <columns>
+                      <TableColumn prefWidth="163.0" text="Datum" />
+                      <TableColumn prefWidth="310.0" text="Text" />
+                        <TableColumn prefWidth="173.7250518798828" text="Soll Konto" />
+                        <TableColumn prefWidth="173.77880859375" text="Haben Konto" />
+                        <TableColumn prefWidth="215.0" style="-fx-alignment: CENTER_RIGHT;" text="Betrag" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="addBookingBtn" layoutX="980.0" layoutY="124.0" mnemonicParsing="false" onAction="#addBooking" text="Hinzufügen" />
+                  <TextField fx:id="bookingDateTextField" layoutX="32.0" layoutY="127.0" prefHeight="27.0" prefWidth="136.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Hauptbuch">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="chartAccnoTextField" layoutX="32.0" layoutY="127.0" />
+                  <TextField fx:id="chartShortNameTextField" layoutX="248.0" layoutY="127.0" />
+                  <TextField fx:id="chartNameTextField" layoutX="438.0" layoutY="127.0" />
+                  <ComboBox fx:id="chartTypeCb" layoutX="629.0" layoutY="126.0" prefWidth="150.0" />
+                  <Text layoutX="27.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hauptbuch">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="32.0" layoutY="105.0" text="Nummer" />
+                  <Label layoutX="250.0" layoutY="106.0" text="Abkürzung" />
+                  <Label layoutX="438.0" layoutY="105.0" text="Name" />
+                  <Label layoutX="630.0" layoutY="105.0" text="Typ" />
+                  <TableView fx:id="chartsTable" layoutX="32.0" layoutY="223.0" prefHeight="417.0" prefWidth="1029.0">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="Nummer" />
+                        <TableColumn prefWidth="374.0" text="Name" />
+                        <TableColumn prefWidth="200.0" text="Typ" />
+                        <TableColumn prefWidth="378.0" style="-fx-alignment: CENTER_RIGHT;" text="Saldo" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="addChartBtn" layoutX="812.0" layoutY="128.0" mnemonicParsing="false" onAction="#addChart" text="Hinzufügen" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
