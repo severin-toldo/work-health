@@ -1,10 +1,8 @@
 package com.stoldo.work_health;
 
 
+import com.stoldo.work_health.gui.AbstractController;
 import com.stoldo.work_health.gui.pages.main.MainController;
-import com.stoldo.work_health.model.AbstractController;
-import com.stoldo.work_health.shared.constants.TranslationKey;
-import com.stoldo.work_health.shared.util.JavaFxUtils;
 
 import javafx.application.Application;
 import javafx.scene.Parent;
@@ -24,7 +22,7 @@ public class ApplicationStarter extends Application {
 		Parent mainParent = mainController.getParent();
 		Scene mainScene = new Scene(mainParent, 1102, 704);
 		primaryStage.centerOnScreen();
-		primaryStage.setTitle(JavaFxUtils.translate(TranslationKey.APPLICATION_TITLE));
+		primaryStage.setTitle("Application Title");
 		primaryStage.setScene(mainScene);
 		primaryStage.show();
 	}

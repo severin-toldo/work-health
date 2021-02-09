@@ -1,4 +1,4 @@
-package com.stoldo.work_health.shared.constants;
+package com.stoldo.work_health.shared;
 
 public class Constants {
 	public static final String RESOURCE_BUNDLE_PATH = "com.stoldo.work_health.i18n.Resources";

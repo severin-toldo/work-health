@@ -1,4 +1,4 @@
-package com.stoldo.work_health.model;
+package com.stoldo.work_health.gui;
 
 
 import org.apache.commons.lang3.StringUtils;
