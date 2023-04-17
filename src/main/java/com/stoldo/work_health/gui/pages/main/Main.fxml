@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="1102.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stoldo.work_health.gui.pages.main.MainController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="1102.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
     <Tab text="Challanges">
       <content>
@@ -24,10 +24,10 @@
                       <TableColumn prefWidth="449.0" text="Challanges" />
                     </columns>
                   </TableView>
-                  <ImageView fx:id="currentChallangeImageView" fitHeight="450.0" fitWidth="450.0" layoutX="27.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
-                  <Text fx:id="currentChallangeTextField" layoutX="32.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHALLANGE_NAME" />
+                  <ImageView fx:id="currentActivityImageView" fitHeight="450.0" fitWidth="450.0" layoutX="27.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
+                  <Text fx:id="currentActivityText" layoutX="32.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHALLANGE_NAME" />
                   <Slider fx:id="timeSlider" disable="true" layoutX="23.0" layoutY="574.0" prefHeight="16.0" prefWidth="450.0" />
-                  <Text fx:id="timeTextField" layoutX="429.0" layoutY="615.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MM:SS" />
+                  <Text fx:id="timeText" layoutX="429.0" layoutY="615.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MM:SS" />
                   <Button fx:id="playPauseButton" layoutX="235.0" layoutY="597.0" mnemonicParsing="false" text="&gt;" />
                   <Button fx:id="previousButton" layoutX="194.0" layoutY="597.0" mnemonicParsing="false" text="&lt;&lt;" />
                   <Button fx:id="nextButton" layoutX="268.0" layoutY="597.0" mnemonicParsing="false" text="&gt;&gt;" />

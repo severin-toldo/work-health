@@ -5,10 +5,22 @@ import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javax.inject.Inject;
+
+import org.codejargon.feather.Feather;
 
 import com.stoldo.work_health.gui.AbstractController;
+import com.stoldo.work_health.model.ContinuousActivity;
+import com.stoldo.work_health.model.ContinuousChallange;
+import com.stoldo.work_health.service.ActivityService;
 import com.stoldo.work_health.shared.util.JavaFxUtils;
 
 import javafx.application.Platform;
@@ -28,13 +40,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import javafx.util.Pair;
 
 
 public class MainController extends AbstractController {
-	
+
 	@FXML
-	private TextField currentActivityTextField;
+	private Text currentActivityText;
 	
 	@FXML
 	private ImageView currentActivityImageView;
@@ -43,7 +56,7 @@ public class MainController extends AbstractController {
 	private Slider timeSlider;
 	
 	@FXML
-	private TextField timeTextField;
+	private Text timeText;
 	
 	@FXML
 	private Button previousButton;
@@ -54,14 +67,60 @@ public class MainController extends AbstractController {
 	@FXML
 	private Button nextButton;
 	
+//	@Inject
+	private ActivityService activityService = new ActivityService();
+	
+	private Timer acitivtyTimer = new Timer();
+	private static final int ACTIVITY_DELAY = 1000;
+	private static final int ACTIVITY_PERIOD = 1000;
+	
+	private int acitivtyInterval;
 	
 	
-	
-	
+	public MainController(Feather feather) {
+		super(feather);
+	}
 
 	@Override
 	public void initialize() throws Exception {
+		startContinuousActivity(activityService.getContinuousAcivities().peek());
+		
+		
+//		currentActivityImageView.setImage(challangeService.getContinuousChallanges().get(0).getImage());
 	}
+	
+	@SuppressWarnings("deprecation")
+	private void startContinuousActivity(ContinuousActivity activity) {
+		timeSlider.setMin(0);
+		timeSlider.setMax(activity.getDuration().getSeconds());
+		
+		acitivtyInterval = activity.getDuration().getSeconds();
+		acitivtyTimer.scheduleAtFixedRate(new TimerTask() {
+
+	        public void run() {
+	        	int value = setInterval();
+	        	timeSlider.setValue(value);
+	        	System.out.println("hello");
+	        }
+	        
+	    }, ACTIVITY_DELAY, ACTIVITY_PERIOD);	
+		
+		
+		
+		
+	}
+	
+	private final int setInterval() {
+	    if (acitivtyInterval == 1) {
+	    	acitivtyTimer.cancel();
+	    }
+	       
+	    return --acitivtyInterval;
+	}
+
+	
+	
+	
 	
 	
 	

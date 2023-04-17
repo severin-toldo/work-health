@@ -6,9 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
+
 
 public class JavaFxUtils {
 	
@@ -20,18 +18,6 @@ public class JavaFxUtils {
 		fxmlLoader.setController(controller);
 		
 		return (T) fxmlLoader.load();
-	}
-	
-	public static Stage openSubWindow(AbstractController c, double width, double height, String title) {
-		Stage subStage = new Stage();
-		c.load(subStage);
-		Scene subScene = new Scene(c.getParent(), width, height);
-		subStage.setScene(subScene);
-		subStage.setTitle(title);
-		subStage.initModality(Modality.APPLICATION_MODAL);
-		subStage.show();
-		
-		return subStage;
 	}
 	
 	public static <T> ObservableList<T> asObservableList(List<T> list) {

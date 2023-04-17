@@ -1,6 +1,8 @@
 package com.stoldo.work_health;
 
 
+import org.codejargon.feather.Feather;
+
 import com.stoldo.work_health.gui.AbstractController;
 import com.stoldo.work_health.gui.pages.main.MainController;
 
@@ -17,7 +19,7 @@ public class ApplicationStarter extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		AbstractController mainController = new MainController();
+		AbstractController mainController = new MainController(Feather.with());
 		mainController.load(primaryStage);
 		Parent mainParent = mainController.getParent();
 		Scene mainScene = new Scene(mainParent, 1102, 704);
